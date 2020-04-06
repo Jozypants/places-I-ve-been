@@ -10,11 +10,12 @@ function Place(location, landmarks, when, notes, activity) {
 }
 
 Place.prototype.bestTime = function () {
-  return this.location + "during the" + this.when
+  return "The best time to visit " + this.location + " is during the " + this.when
 }
 
 var portland = new Place("Portland", "Rose Garden", "Summer", "be sure to check out Powell's Books", "Hiking");
 
+var alaska = new Place("St.Petersberge", "docks", "summer", "Check out their yearly viking festival", "shopping")
 
 
 
@@ -24,6 +25,11 @@ $(document).ready(function(){
     event.preventDefault();
     $("#portland").text(portland.location + " is beautiful in the " + portland.when + ". Stop by the " + portland.landmarks + " and  " + portland.notes + " after going " + portland.activity + ".");
   });
+  $('#PNW').click(function(event) {
+    event.preventDefault();
+    $("#PNW").text(alaska.bestTime() + "they have beautiful " + alaska.landmarks);
+  });
+
 });
 
 
