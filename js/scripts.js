@@ -21,13 +21,19 @@ var alaska = new Place("St.Petersberge", "docks", "summer", "Check out their yea
 
 //UI logic
 $(document).ready(function(){
-  $('#portland').click(function (event) {
+  $('#pdx').click(function (event) {
     event.preventDefault();
     $("#portland").text(portland.location + " is beautiful in the " + portland.when + ". Stop by the " + portland.landmarks + " and  " + portland.notes + " after going " + portland.activity + ".");
+    $("#portland").toggle();
+    
+    
+    
   });
-  $('#PNW').click(function(event) {
+  $('#Alaska').click(function(event) {
     event.preventDefault();
-    $("#PNW").text(alaska.bestTime() + "they have beautiful " + alaska.landmarks);
+    $("#PNW").text(alaska.bestTime() + " they have beautiful " + alaska.landmarks);
+    $("#PNW").toggle();
+
   });
 
 });
